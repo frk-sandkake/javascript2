@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array Methods</title>
+    <script src="./js/script.js" defer></script>
+</head>
+
+
+<style>
+    main {
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
+    code {
+        background-color: #000;
+        color: rgba(241, 205, 67, 0.91);
+        border: 1px solid #999;
+        border-radius: 3px;
+        display: inline-block;
+        padding: .2rem;
+    }
+
+    pre code {
+        width: 300px;
+        display: block;
+        padding: 1.5rem 3rem;
+        margin: 0 auto;
+        white-space: pre-line;
+    }
+
+</style>
+
+<body>
+<main>
+    <h1> Array Methods </h1>
+    <p>
+        The <code>Map</code> object holds key/value pairs, like a normal object, but unlike normal objects
+        the <code>Map</code> object remembers the order of key/value pairs. The <code>Map</code> object can
+        hold functions, objects and primitives, whereas ordinary objects can only use a string og a symbol as keys.
+    </p>
+
+    <h2> Create Map, add key/value pair and get the key value </h2>
+    <pre>
+        <code>
+            // This creates a new Map
+            const myMap = new Map();
+
+            // The 'a' key will be set to 1
+            myMap.set('a', 1);
+
+            console.log(myMap.get('a'));
+            // Logs:
+            // 1
+        </code>
+    </pre>
+
+    <h2> Delete values from Map </h2>
+    <pre>
+        <code>
+            myMap.delete('a');
+        </code>
+    </pre>
+
+    <h2> Get number of items in a Map </h2>
+    <pre>
+        <code>
+            const myMap = new Map();
+
+            myMap.set('a', 1);
+            myMap.set('b', 2);
+
+            console.log(myMap.size);
+            // Logs:
+            // 2
+        </code>
+    </pre>
+</main>
+</body>
+</html>

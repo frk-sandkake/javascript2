@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring</title>
+    <script src="./js/script.js" defer></script>
+</head>
+
+<style>
+
+    main {
+        margin: 0 auto;
+        max-width: 600px;
+    }
+
+    code {
+        background-color: #eee;
+        border: 1px solid #999;
+        border-radius: 3px;
+        display: inline-block;
+        padding: .2rem;
+    }
+
+    pre code {
+        width: fit-content;
+        display: block;
+        padding: 1.5rem 3rem;
+        margin: 0 auto;
+        white-space: pre-line;
+    }
+
+</style>
+
+<body>
+<main>
+    <h1> Destructuring </h1>
+    <p>
+        Destructuring is used to shorten and clean up our codes.
+        Lets us take properties from an object, or values from an array.
+        Dot notation, Assign properties to variables, destructuring the properties.
+    </p>
+
+    <h2> How to destructure the values of an Object </h2>
+    <pre>
+        <code>
+            const {
+                /* properties */
+            } = objectName;
+
+            // For example:
+            const { property1, property2 } = objectName;
+        </code>
+    </pre>
+
+    <h3> How to use the destructured Objects </h3>
+    <pre>
+        <code>
+          const person = {
+              firstName: 'Ola',
+              lastName: 'Nordmann',
+              country: 'Norway',
+            };
+
+            // Normal variable assignment to object properties with Dot notation:
+            const firstName = person.firstName;
+            const lastName = person.lastName;
+            const country = person.country;
+
+            // Destructuring the values(properties) instead:
+            const { firstName, lastName, country } = person;
+
+            // Using the destructured values:
+            const greeting = `Hello, I am ${firstName} ${lastName} from ${country}.`;
+            console.log(greeting);
+            // Logs:
+            // Hello, I am Ola Nordmann from Norway.
+        </code>
+    </pre>
+
+    <h3> How to use it in a function </h3>
+    <pre>
+        <code>
+            function greetPerson(personObject) {
+              const { firstName, lastName } = personObject;
+              console.log(`Hello ${firstName} ${lastName}.`);
+            }
+
+            // Destructure the properties from the object
+            function greetPerson({ firstName, lastName }) {
+              console.log(`Hello ${firstName} ${lastName}.`);
+            }
+
+            const person = {
+              firstName: 'Ola',
+              lastName: 'Nordmann',
+            };
+
+            greetPerson(person);
+        </code>
+    </pre>
+
+    <h2>How to use destructuring in a Array</h2>
+    <pre>
+        <code>
+            // Get only people that has scored 5 or more:
+            const people = [
+              {
+                firstName: 'Berit',
+                lastName: 'Nilsen',
+                score: 8,
+              },
+              {
+                firstName: 'Lars',
+                lastName: 'Nilsen',
+                score: 9,
+              },
+              {
+                firstName: 'Nina',
+                lastName: 'Person',
+                score: 4,
+              }
+            ];
+
+            //Using .filter() the old way:
+            const winnersOld = people.filter((currentItem) =>
+            {
+              if (currentItem.score >= 5) {
+                return true;
+              }
+            });
+            console.log(winnersOld);
+
+            // Using .filter() the new way:
+            const winnersNew = people.filter(({ score }) => {
+              if (score >= 5) {
+                return true;
+              }
+            });
+
+            console.log(winnersNew);
+        </code>
+    </pre>
+
+    <h3> Other example with arrays</h3>
+    <pre>
+        <code>
+            // example destructuring array with numbers
+            //           index:    0   1   2   3   4   5
+            const streetNumbers = [12, 30, 34, 50, 1, 67];
+
+            const [x, y] = streetNumbers; // X=0 Y=1 in index
+
+            console.log(x, y); // Log: 12, 30
+        </code>
+    </pre>
+    <pre>
+        <code>
+            const names = ["Hesh", "Linda", "Alex", "Fariad", "Yasmin", "Aladdin", "Jenny"];
+
+            const [nameX, nameY, nameZ, ...others] = names;
+
+            console.log(nameX, nameY, nameZ); // Logs: Hesh Linda Alex
+            console.log(...others); // Logs: Fariad Yasmin Aladdin Jenny
+            console.log(others); // Logs: the others in an Array
+        </code>
+    </pre>
+    <pre>
+        <code>
+            // Ignoring Values:
+            const numbers = [4, 5, 6, 19, 30, 12];
+
+            const [num0, , num3, , num6] = numbers;
+
+            console.log(num0, num3, num6); // Logs: 4 6 30
+        </code>
+    </pre>
+
+
+</main>
+</body>
+</html>
