@@ -4,6 +4,7 @@ const employeesList = document.querySelector("#my-employees-list");
 const API_URL = 'https://dummy.restapiexample.com/api/v1/employees';
 console.log(API_URL);
 
+
 function getEmployees() {
   fetch(API_URL)
     .then(data => {

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> .reduce() | Array Method</title>
+    <script src="./js/script.js" defer></script>
+</head>
+
+
+<style>
+    body {
+        margin: 0 auto;
+        max-width: 500px;
+        background-color: #F6EBD7;
+    }
+    main {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+    code {
+        background-color: #000000;
+        color: #EE9C5A;
+        border: 1px solid #999;
+        border-radius: 5px;
+        display: inline-block;
+        padding: .2rem;
+    }
+
+    pre code {
+        width: 300px;
+        display: block;
+        padding: 1.5rem 3rem;
+        margin: 0 auto;
+        white-space: pre-line;
+    }
+
+</style>
+
+<body>
+<main>
+    <h1> .reduce() Array Methode </h1>
+    <p>
+        The <code>.reduce()</code> array method loops through the array.
+        the <code>.filter()</code> object remembers the order of key/value pairs. The <code>Map</code> object can
+        hold functions, objects and primitives, whereas ordinary objects can only use a string og a symbol as keys.
+    </p>
+
+    <h2> Filter used with if statement </h2>
+    <pre>
+        <code>
+            const numbers = [4, 5, 7, 12, 400, 65, 2, 1];
+
+            const filterNumb = numbers.filter((number) => {
+              if (number >= 4) {
+                return true;
+              }
+            });
+
+            console.log(filterNumb);
+        </code>
+    </pre>
+
+    <h2> Filter without if statements </h2>
+    <pre>
+        <code>
+            const numbers = [4, 5, 7, 12, 400, 65, 2, 1];
+
+            const filterNumb = numbers.filter((number) => number >= 4)
+
+            console.log(filterNumb);
+        </code>
+    </pre>
+
+    <h2> Get number of items in a Map </h2>
+    <pre>
+        <code>
+
+        </code>
+    </pre>
+</main>
+</body>
+</html>
